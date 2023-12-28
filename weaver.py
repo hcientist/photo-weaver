@@ -22,7 +22,9 @@ def weave(a, b, out, region_w_h=[60]):
 
             odd_col = region[1]
             for i in range(0, min(img_a.size[0], img_b.size[0]), region[0]):
-                for j in range(odd_col, min(img_a.size[1], img_b.size[1]), region[1]*2):
+                for j in range(
+                    odd_col, min(img_a.size[1], img_b.size[1]), region[1] * 2
+                ):
                     box = (i, j, i + region[0], j + region[1])
                     a = img_a.crop(box)
                     b = img_b.crop(box)
